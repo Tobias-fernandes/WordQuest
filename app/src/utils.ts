@@ -1,4 +1,4 @@
-import { IWords } from "./@Types/types";
+import { IWords } from "./@types/types";
 
 export const reorder = (
     list: IWords[],

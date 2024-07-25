@@ -21,7 +21,6 @@ export default function DragNDrop() {
     }
 
     if (src.droppableId === dest.droppableId) {
-      // --- SAME CONTAINER ---
       // If same container, just reorder
       const items = reorder(
         [...listWords[src.droppableId]],
@@ -29,14 +28,13 @@ export default function DragNDrop() {
         dest.index
       );
 
-      // Set the correct pokedex category
+      // Set the correct list
       const tempListWords = { ...listWords };
       tempListWords[src.droppableId] = items;
 
       setListWords({ ...tempListWords });
     } else {
-      // --- DIFFERENT CONTAINER ---
-      // Otherwise, we need to handle source and destination
+      // Otherwise, handle source and destination
 
       // Remove from the source list
       const srcItems = remove(listWords[src.droppableId], src.index);

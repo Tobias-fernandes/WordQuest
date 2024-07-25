@@ -1,4 +1,4 @@
-import { IDataWords } from "@/@Types/types";
+import { IDataWords } from "@/@types/types";
 
 export const initialWords: IDataWords = {
     upload: [

@@ -1,9 +1,9 @@
 "use client";
 
-import useInputContext from "@/hooks/useInputContext";
-import useChangeContext from "@/hooks/useChangeDataContext";
+// import useInputContext from "@/hooks/useInputContext";
+// import useChangeContext from "@/hooks/useChangeDataContext";
 import { FormEvent, useState } from "react";
-import { IContainer, IWords } from "../../@Types/types";
+import { IContainer, IWords } from "../../@types/types";
 
 import {
   GripVertical as GripVerticalIcon,
@@ -16,7 +16,7 @@ import { Droppable } from "@hello-pangea/dnd";
 export const Upload = ({ words }: IContainer) => {
   const [inputValue, setInputValue] = useState(""); // State to get the input value
 
-  const { add, setAdd } = useChangeContext();
+  // const { add, setAdd } = useChangeContext();
 
   let counter = 5;
   // console.log(words);
@@ -25,13 +25,13 @@ export const Upload = ({ words }: IContainer) => {
     e.preventDefault();
     setInputValue("");
 
-    if (!inputValue) return;
-    // if (add.find((item) => item.word === inputValue)) return;
+    // if (!inputValue) return;
+    // // if (add.find((item) => item.word === inputValue)) return;
 
-    const newWord: IWords = { id: String(counter), word: inputValue };
-    // setAdd([...words, newWord]);
-    setAdd((prev) => [...prev, newWord]);
-    counter++;
+    // const newWord: IWords = { id: String(counter), word: inputValue };
+    // // setAdd([...words, newWord]);
+    // setAdd((prev) => [...prev, newWord]);
+    // counter++;
   }
 
   // const { input } = useInputContext();
@@ -109,7 +109,7 @@ export const Upload = ({ words }: IContainer) => {
                         ref={provided.innerRef}
                         {...provided.draggableProps}
                         {...provided.dragHandleProps}
-                        className="relative flex items-center shadow-borderShadow rounded-md m-3 py-2 px-2 justify-center"
+                        className="relative flex items-center shadow-md rounded-md m-3 py-2 px-2 justify-center"
                       >
                         <span className="absolute left-2">
                           <GripVerticalIcon size={18} />
